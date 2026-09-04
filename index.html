@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Gaming Gang ✨ Đầy Màu Sắc & Động</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* 🌈 Nền chuyển màu liên tục */
+            background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #083344, #172554);
+            background-size: 400% 400%;
+            animation: gradientBody 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #e2e8f0;
+            line-height: 1.65;
+        }
+        @keyframes gradientBody {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ========== ĐẦU TRANG — VIỀN CHẢY MÀU ========== */
+        header {
+            text-align: center;
+            padding: 36px 24px;
+            background: rgba(8, 15, 30, 0.85);
+            position: relative;
+            overflow: hidden;
+        }
+        /* ✨ Viền động xung quanh đầu trang */
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #22d3ee, #a855f7, #f43f5e, #facc15, #22d3ee);
+            background-size: 300% 300%;
+            animation: borderFlow 4s linear infinite;
+            height: 3px;
+            top: 0;
+        }
+        @keyframes borderFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+
+        .logo {
+            width: 125px;
+            height: 125px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: linear-gradient(#050a18, #050a18) padding-box,
+                        linear-gradient(270deg, #22d3ee, #a855f7, #f43f5e, #22d3ee) border-box;
+            background-size: 300% 300%;
+            animation: logoGlow 5s linear infinite;
+            margin-bottom: 14px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        @keyframes logoGlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+        .logo:hover {
+            transform: scale(1.06) rotate(2deg);
+            filter: brightness(1.2) saturate(1.4);
+        }
+
+        .ten-chu {
+            font-size: 32px;
+            font-weight: 900;
+            /* 💥 Chữ đổi màu liên tục & sáng */
+            background: linear-gradient(90deg, #22d3ee, #facc15, #f43f5e, #a855f7, #22d3ee);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textRainbow 3s linear infinite;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.5));
+        }
+        @keyframes textRainbow {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+
+        /* ========== THÂN TRANG ========== */
+        main {
+            flex-grow: 1;
+            padding: 45px 20px;
+            max-width: 740px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .tieu-de-muc {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: rainbowPulse 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes rainbowPulse {
+            from { filter: drop-shadow(0 0 8px #22d3ee); }
+            to { filter: drop-shadow(0 0 14px #f43f5e); }
+        }
+
+        /* Lưới sản phẩm */
+        .luoi-san-pham {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 26px;
+        }
+        @media (min-width: 600px) {
+            .luoi-san-pham { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* 📦 Thẻ sản phẩm có viền chảy màu */
+        .khung-san-pham {
+            position: relative;
+            background: rgba(15, 23, 42, 0.82);
+            border-radius: 20px;
+            padding: 22px 20px;
+            overflow: hidden;
+        }
+        /* Viền ngoài động liên tục */
+        .khung-san-pham::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(270deg, #22d3ee, #facc15, #f97316, #ec4899, #8b5cf6, #22d3ee);
+            background-size: 400% 400%;
+            animation: borderSpin 6s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        @keyframes borderSpin {
+            0% { background-position: 0% center; }
+            100% { background-position: 400% center; }
+        }
+        .khung-san-pham:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 40px rgba(34, 211, 238, 0.25), 0 0 25px rgba(168, 85, 247, 0.2);
+        }
+
+        /* 🖼️ ẢNH có hiệu ứng ánh sáng chạy */
+        .hinh-gioi-thieu {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 18px;
+            position: relative;
+            filter: saturate(1.15) contrast(1.05);
+            transition: transform .4s ease, filter .4s ease;
+        }
+        .hinh-gioi-thieu:hover {
+            transform: scale(1.025);
+            filter: saturate(1.4) brightness(1.1);
+        }
+
+        .ten-sp {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 800;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mo-ta {
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 15px;
+            margin-bottom: 22px;
+        }
+
+        .nhom-link {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* 🚀 NÚT có nền chuyển động liên tục & sáng chói */
+        .nut-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            border-radius: 13px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            border: none;
+            cursor: pointer;
+            background-size: 300% auto;
+            animation: btnFlow 4s linear infinite;
+            transition: transform .35s ease, filter .35s ease;
+        }
+        @keyframes btnFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+        .nut-link:hover {
+            transform: translateY(-3px) scale(1.03);
+            filter: brightness(1.2) saturate(1.35);
+        }
+
+        .tai-xuong {
+            background-image: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9, #22d3ee);
+            color: #0c1929;
+            box-shadow: 0 0 18px rgba(34, 211, 238, 0.55);
+        }
+
+        .lay-key {
+            background-image: linear-gradient(90deg, #7c3aed, #a855f7, #f472b6, #a855f7);
+            color: white;
+            box-shadow: 0 0 18px rgba(168, 85, 247, 0.5);
+        }
+
+        /* ========== CHÂN TRANG ========== */
+        footer {
+            background: rgba(2, 6, 23, 0.9);
+            position: relative;
+            color: #94a3b8;
+            text-align: center;
+            padding: 32px 20px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+        /* Viền trên chân trang cũng chuyển màu */
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #22d3ee, #facc15, #f43f5e, #a855f7, #22d3ee);
+            background-size: 300%;
+            animation: borderFlow 5s linear infinite;
+        }
+
+        .tele-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #67e8f9;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding: 11px 18px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            background: linear-gradient(#050a18, #050a18) padding-box,
+                        linear-gradient(90deg, #22d3ee, #a855f7, #f43f5e) border-box;
+            background-size: 250%;
+            animation: borderFlow 4s linear infinite;
+            transition: transform .3s ease, filter .3s ease;
+        }
+        .tele-link:hover {
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.7));
+        }
+
+        footer p { opacity: 0.9; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<!-- ============== ĐẦU TRANG ============== -->
+<header>
+    <img src="logo-cua-ban.jpg" alt="Logo Shop Gaming Gang" class="logo">
+    <h1 class="ten-chu">GANG • SHOP GAMING ✨</h1>
+</header>
+
+<!-- ============== DANH SÁCH SẢN PHẨM ============== -->
+<main>
+    <h2 class="tieu-de-muc">⚡ Danh sách sản phẩm nổi bật</h2>
+
+    <div class="luoi-san-pham">
+        <!-- SẢN PHẨM 1 -->
+        <div class="khung-san-pham">
+            <img src="anh-sp1.jpg" alt="Sản phẩm 1" class="hinh-gioi-thieu">
+            <h3 class="ten-sp">Sản Phẩm 1</h3>
+            <p class="mo-ta">Tối ưu • Mượt • An toàn • Cập nhật liên tục</p>
+            <div class="nhom-link">
+                <a href="#link1" class="nut-link tai-xuong">📥 TẢI / MUA</a>
+                <a href="#key1" class="nut-link lay-key">🔑 LẤY KEY</a>
+            </div>
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="khung-san-pham">
+            <img src="anh-sp2.jpg" alt="Sản phẩm 2" class="hinh-gioi-thieu">
+            <h3 class="ten-sp">Sản Phẩm 2</h3>
+            <p class="mo-ta">Chất lượng cao • Chống phát hiện • Hỗ trợ 24/7</p>
+            <div class="nhom-link">
+                <a href="#link2" class="nut-link tai-xuong">📥 TẢI / MUA</a>
+                <a href="#key2" class="nut-link lay-key">🔑 LẤY KEY</a>
+            </div>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="khung-san-pham">
+            <img src="anh-sp3.jpg" alt="Sản phẩm 3" class="hinh-gioi-thieu">
+            <h3 class="ten-sp">Sản Phẩm 3</h3>
+            <p class="mo-ta">Phiên bản mạnh • Nhanh • Ổn định tuyệt đối</p>
+            <div class="nhom-link">
+                <a href="#link3" class="nut-link tai-xuong">📥 TẢI / MUA</a>
+                <a href="#key3" class="nut-link lay-key">🔑 LẤY KEY</a>
+            </div>
+        </div>
+
+        <!-- SẢN PHẨM 4 -->
+        <div class="khung-san-pham">
+            <img src="anh-sp4.jpg" alt="Sản phẩm 4" class="hinh-gioi-thieu">
+            <h3 class="ten-sp">Sản Phẩm 4</h3>
+            <p class="mo-ta">Dành cho game thủ chuyên nghiệp • Đặc biệt & an toàn</p>
+            <div class="nhom-link">
+                <a href="#link4" class="nut-link tai-xuong">📥 TẢI / MUA</a>
+                <a href="#key4" class="nut-link lay-key">🔑 LẤY KEY</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ============== CHÂN TRANG ============== -->
+<footer>
+    <a href="https://t.me/ten-kenh-cua-ban" target="_blank" rel="noopener" class="tele-link">
+        🚀 THAM GIA KÊN TELEGRAM CHÍNH THỨC
+    </a>
+    <p>© 2026 Gang Shop Gaming • Màu sắc & ánh sáng luôn chuyển động • Nơi tin cậy cho mọi chiến binh</p>
+</footer>
+
+</body>
+</html>
